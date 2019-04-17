@@ -258,7 +258,7 @@ export class CheckListResultMonitor {
 
                 if (checkListItems.length > 0) {
                     // Change it's status to 160 
-                    // TODO: Check if it's status is not 160
+                    // TODO: Check if it's status is 200
                     APIRoute.executeBAPI(new ChangeMachineStatus(machine, CheckListResultMonitor.SHIFT_CHANGE_STATUS, CheckListResultMonitor.USER_BADGE).dialogString())
                 }
             });
