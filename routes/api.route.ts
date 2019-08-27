@@ -7,7 +7,7 @@ export class APIRoute {
     private static host: string;
 
     public static executeBAPI(dialog: string) {
-        return fetch(`${APIRoute.getEndPoint()}/fetch`,
+        return fetch(`${APIRoute.getEndPoint()}/bapi`,
             {
                 method: 'POST',
                 body: JSON.stringify({ dialog: dialog }),
