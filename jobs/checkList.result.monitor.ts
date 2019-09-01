@@ -120,8 +120,12 @@ export class CheckListResultMonitor {
     }
 
     public static async execute() {
-        await CheckListResultMonitor.ShiftChangeCheck();
-        await CheckListResultMonitor.CheckListResultCheck();
+        try {
+            await CheckListResultMonitor.ShiftChangeCheck();
+            await CheckListResultMonitor.CheckListResultCheck();
+        } catch (error) {
+            console.log(`Monitor execute failed: ${error}`);
+        }
         setTimeout(CheckListResultMonitor.execute, CheckListResultMonitor.EXECUTE_INTERVAL);
     }
 
